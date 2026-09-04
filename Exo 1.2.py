@@ -46,5 +46,15 @@ def mini(*nombre)-> int:
 print(mini(1, 3, 5,4,5,8,9,1,2,0,2,1,4,8,6))
 
 
-"""
 
+
+
+def afficheDico(dico, prefixe):
+    for cle in dico:
+        print(prefixe, cle, ":", dico[cle])
+
+monDico = {"nom": "nordmann", "prenom": "maxence", "age": 21}
+afficheDico(monDico, "->")
+
+
+"""
