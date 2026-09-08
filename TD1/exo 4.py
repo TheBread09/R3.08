@@ -12,8 +12,7 @@ class Velo:
         self.vitesse_courante = 1
 
     def __str__(self) -> str:
-        return (f"Vélo {self.marque} {self.couleur}, pneus {self.taille_pneu} pouces, "
-                f"vitesse {self.vitesse_courante}/{self.nb_vitesses}")
+        return (f"Vélo {self.marque} {self.couleur}, pneus {self.taille_pneu} pouces, vitesse {self.vitesse_courante}/{self.nb_vitesses}")
 
     def vitesse_plus(self) -> int:
         if self.vitesse_courante < self.nb_vitesses:
