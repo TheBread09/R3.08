@@ -19,3 +19,33 @@ Cercle
 + intersecte(autre : Cercle) : bool
 + contient(point : Point) : bool
 
+
+
+Rectangle
+- pointBasGauche : Point
+- longueur : float
+- hauteur : float
++ Rectangle()
++ Rectangle(pointBasGauche : Point, longueur : float, hauteur : float)
++ Rectangle(pointBasGauche : Point, pointHautDroit : Point)
++ surface() : float
++ perimetre() : float
++ pointBasGauche() : Point
++ pointBasDroit() : Point
++ pointHautGauche() : Point
++ pointHautDroit() : Point
++ contient(point : Point) : bool
+
+
+
+
+Triangle
+- cote1 : float
+- cote2 : float
+- angleDroit : Point
++ Triangle(cote1 : float, cote2 : float)
++ Triangle(cote1 : float, cote2 : float, angleDroit : Point)
++ hypotenuse() : float
++ perimetre() : float
++ surface() : float
++ estIsocele() : bool

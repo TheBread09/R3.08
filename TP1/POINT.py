@@ -7,13 +7,19 @@ class Point:
         self.__x = x
         self.__y = y  # __ = privé en python
 
+    def get_x(self) -> float:
+        return self.__x
+
+    def get_y(self) -> float:
+        return self.__y
+
     def __str__(self):
         return f"Point {self.__x},{self.__y}"
 
     def distanceCoord(self, a: float, b: float) -> float:
         return math.sqrt(math.pow(self.__x - a, 2) + math.pow(self.__y - b, 2))
 
-    def distancePoint(self, camarade: Point) -> float:
+    def distancePoint(self, camarade: "Point") -> float:
         return self.distanceCoord(camarade.__x, camarade.__y)
 
 
