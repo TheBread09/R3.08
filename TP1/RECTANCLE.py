@@ -15,8 +15,7 @@ class Rectangle:
         self.__hauteur = hauteur
 
     def __str__(self):
-        return f"Rectangle pointBasGauche={self.__pointBasGauche}, " \
-               f"longueur={self.__longueur}, hauteur={self.__hauteur}"
+        return f"Rectangle pointBasGauche={self.__pointBasGauche}, longueur={self.__longueur}, hauteur={self.__hauteur}"
 
     def surface(self) -> float:
         return self.__longueur * self.__hauteur
@@ -32,12 +31,10 @@ class Rectangle:
                       self.__pointBasGauche.get_y())
 
     def pointHautGauche(self) -> "Point":
-        return Point(self.__pointBasGauche.get_x(),
-                      self.__pointBasGauche.get_y() + self.__hauteur)
+        return Point(self.__pointBasGauche.get_x(),self.__pointBasGauche.get_y() + self.__hauteur)
 
     def pointHautDroit(self) -> "Point":
-        return Point(self.__pointBasGauche.get_x() + self.__longueur,
-                      self.__pointBasGauche.get_y() + self.__hauteur)
+        return Point(self.__pointBasGauche.get_x() + self.__longueur, self.__pointBasGauche.get_y() + self.__hauteur)
 
     def contient(self, point: "Point") -> bool:
         xMin = self.__pointBasGauche.get_x()
