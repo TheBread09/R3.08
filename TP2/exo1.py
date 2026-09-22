@@ -100,13 +100,85 @@ class Mage(Personnage):
 
 
 
+class Joueur:
+    def __init__(self, nom:str, max_perso: int):
+        self.__nom = nom
+        self.__niveau = max_perso
+        self.__personnages = []
+
+    @property
+    def nom(self) -> str:
+        return self.__nom
+
+    @property
+    def personnages(self) -> list:
+        return self.__personnages
+
+    def ajouter_personnage(self, personnage: Personnage):
+        if len(self.__personnages) < self.__niveau:
+            self.__personnages.append(personnage)
+            return True
+        return False
+
+    def personnage_num(self, numero: int):
+        if 0 <= numero <= len(self.__personnages):
+            return self.__personnages[numero]
+        return False
+
+    def personnage_nom(self, pseudo: str):
+        for p in self.__personnages:
+            if p.pseudo == pseudo :
+                return p
+        return None
+
+
+    def elimine_personnage_num(self, numero: int):
+        if 0 <= numero < len(self.__personnages):
+            p = self.__personnages.pop(numero)
+            print (f"personnage {p.pseudo} elimine")
+
+    def eliminer_personnage_pseudo(self, pseudo: str):
+        p = self.get_personnage_pseudo(pseudo)
+        if p:
+            self.__personnages.remove(p)
+            print (f"personnage {p.pseudo} elimine")
+
+    def eliminer_personnage_perso(self, p_recherche):
+        if p_recherche in self.__personnages:
+            self.__personnages.remove(p_recherche)
+            print(f"personnage {p_recherche} elimine")
+
+
+
 
 
 if __name__ == "__main__":
     p1 = Personnage("el diablo, chevalier", 50)
-    p2 = Personnage("gandalf", 67)
-    p1.combattre(p2)
+    p2 = Mage("gandalf", 67)
+    p3 = Guerrier("darius",10)
 
     g = Guerrier("Roi arthur", 29)
     m = Mage("Harry", 45)
-    g.combattre(m)
+
+
+    joueur1 = Joueur("Joueur 1", 3)
+    joueur2 = Joueur("Joueur 2", 4)
+    joueur3 = Joueur("Joueur 3", 5)
+
+
+    joueur1.ajouter_personnage(p1)
+    print("personnage 1 ajouter")
+    joueur2.ajouter_personnage(p2)
+    print("personnage 2 ajouter")
+    joueur1.elimine_personnage_num(1)
+    joueur2.eliminer_personnage_pseudo(2)
+    print("joueur 1 et 2 mort")
+
+    joueur1.ajouter_personnage(p1)
+    print("personnage 1 ajouter")
+    joueur2.ajouter_personnage(p2)
+    print("personnage 2 ajouter")
+    joueur3.ajouter_personnage(p3)
+    print("personnage 3 ajouter")
+
+
